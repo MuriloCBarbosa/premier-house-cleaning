@@ -1,0 +1,645 @@
+@charset "utf-8";
+
+/* Geral */
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Comic Sans MS' ,'Krona One';
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+}
+.hidden{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+i{
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.botao, .botao a{
+    background-color: rgba(255, 255, 255, 0.952);
+    border: 3px solid rgba(255, 255, 255, 0.952);
+    color: #222;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 5px;
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+.botao{
+    display: block;
+    margin: 7em auto 0 auto;
+    padding: 0.5em;
+}
+.botao:hover, .botao:hover a{
+    background-color: #222;
+    border-color: #222;
+    color: #d7c297;
+    outline: none;
+}
+.botao-about{
+    display: block;
+    margin: 0 auto 2em auto;
+    border-radius: 5px;
+
+    background-color: #d7c297;
+    border: 3px solid #d7c297;
+    color: #222;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+/* Hamburguer Menu */
+.logo{
+    margin: auto;
+    padding: 1em;
+    width: 22%;
+    height: 22%;
+    transform: translate(0%, 0%);
+}
+.botao-menu{
+    float: right;
+    margin-right: 4em;
+}
+#checkbox-menu{
+    display: none;
+}
+.cabecalho-menu{
+    background-color: #d7c297;
+    background-image: linear-gradient(to right, white, #d7c297);
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    right: -60%;
+    transition: all 0.5s ease-in-out;
+    overflow: scroll;
+    z-index: 1;
+}
+.cabecalho-menu::-webkit-scrollbar{
+    display: none;
+}
+input[type="checkbox"]:checked ~ nav{
+    transform: translateX(-100%);
+}
+.cabecalho-menu ul{
+    position: absolute;
+    top: 7em;
+    width: 100%;
+}
+.cabecalho-menu a{
+    display: block;
+    text-align: left;
+    margin-top: 0.7em;
+    color: white;
+    font-size: 1.2em;
+}
+.cabecalho-menu a:hover{
+    color: white;
+}
+.cabecalho-menu li:last-child{
+    border: none;
+}
+label{
+    cursor: pointer;
+    display: block;
+    height: 1.3em;
+    width: 1.5em;
+    padding: 0.3em;
+    position: absolute;
+    z-index: 2;
+    margin-top: 7%;
+}
+label span{
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #d7c297;
+    transition: 0.4s ease-in-out;
+}
+
+label span:nth-child(1){
+    top: 0;
+}
+label span:nth-child(2){
+    top: 0.625em; 
+}
+label span:nth-child(3){
+    top: 1.25em;
+}
+#checkbox-menu:checked + label span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 7px;
+    background-color: red;
+}
+#checkbox-menu:checked + label span:nth-child(2){
+    display: none;
+}
+#checkbox-menu:checked + label span:nth-child(3){
+    transform: rotate(45deg);
+    top: 7px;
+    background-color: red;
+}
+
+
+
+/* Menu */
+.cabecalho{
+    text-align: center;
+    background-color: white;
+}
+.cabecalho-logo{
+    font-size: 2em;
+    display: block;
+    padding: 0.4em 0 1em 10em;
+}
+.logo{
+    margin: 0.2em;
+    height: 30%;
+    width: 30%;
+    display: block;
+    float: left;
+}
+.cabecalho-menu{
+    text-align: center;
+    background-color: transparent;
+}
+.cabecalho-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.cabecalho-menu a{
+    color: #504d4e;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    text-transform: uppercase;
+    transition: all 0.6s linear;
+    font-family: 'Krona One';
+}
+.cabecalho-menu a:hover{
+    background-color: #d7c297;
+    color: white;
+}
+
+
+/* Imagem fundo */
+.imagem-fundo{
+   background-image: url(../image/House1.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 38em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.imagem-fundo figcaption{
+    color: white;
+    font-size: 0.8em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.788);
+}
+
+
+/* Container Our Services */
+.container{
+    padding: 1em 0 8em 0;
+    background-color: #d7c297;
+}
+
+.container .title-container{
+    text-align: center;
+    font-size: 1.7em;
+    color: #222;
+    margin: 1em 0 3em 0;
+}
+.card{
+    color: #222;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 3em;
+    border: 1px solid #d7c297;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #22222271;
+    background-color: rgba(255, 255, 255, 0.952);
+}
+.card:hover{
+    background-color: #fff6e3;
+    transition: all 0.3s linear;
+}
+
+.icone{
+    transform: translate(0 , -50%);
+    font-size: 2em;
+}
+.icone:hover{
+    background-color: black;
+    color: #d7c297;
+    transition: all 0.6s linear;
+}
+
+.card h1{
+    font-size: 1.4em;
+}
+.card p{
+    color: #504d4e;
+    display: inline-block;
+    text-align: center;
+    max-width: 80%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2%;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+/* Frase */
+.frase{
+    width: 80%;
+    margin: auto;
+}
+.frase h1, .frase h2{
+    text-align: center;
+}
+.frase h1{
+    font-size: 1.5em;
+    margin-top: 4em;
+    color: #282726;
+}
+.frase h2{
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 4em;
+    color: #222;
+}
+
+/* Why Us */
+.why-us{
+    background-color: #d7c297;
+    padding: 0 0 2em 0;
+}
+.why-us h1{
+    font-size: 1.6em;
+    text-align: center;
+    padding: 1.8em;
+}
+.why-us-dentro{
+    background-image: url(../image/House1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 14em;
+}
+.card-why-us{
+    text-align: center;
+    margin: auto;
+    margin-top: 2em;
+    width: 80%;
+    background-color: white;
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #504d4e;
+}
+.card-why-us i:hover{
+    background-color: black;
+    color: #d7c297;
+    transition: all 0.6s linear;
+}
+
+
+
+/* Contact Us */
+.contact-us{
+    text-align: center;
+    margin: 4em 0 2em 0;
+}
+.logo-final{
+    height: 35%;
+    width: 35%;
+}
+
+/* Rodape */
+.rodape{
+    text-align: center;
+    background-color: #222;
+    padding: 0 0 1.2em 0;
+}
+.rodape-icons{
+    padding: 1.2em 0.7em 0 0.7em;
+}
+.rodape p{
+    text-align: center;
+    color: white;
+    font-size: 1em;
+}
+
+.rodape li{
+    display: inline-block;
+    margin: 0.5em 0.5em;
+}
+.rodape a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.4s;
+}
+.fa-phone:hover{
+    color: #d7c297;
+}
+.icon-instagram:hover{
+    color: #8a3ab9;
+}
+.icon-mail:hover{
+    color: #d7c297;
+}
+
+
+
+/* About Page*/
+.about{
+    background-color: #d7c297;
+    padding: 1em 10%;
+    margin-top: 1em;
+}
+
+.about h1{
+    font-size: 1.6em;
+    text-align: center;
+}
+.about-company p{
+    text-align: justify;
+}
+
+
+.about-owner-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.foto-owner{
+    background-image: url(../image/House1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20em;
+    width: 50%;
+
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+.about-owner p{
+    text-align: justify;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row: 1;
+}
+
+
+/* Contact Page */
+.contact-us-about{
+    border-top: 1px solid #504d4e;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.contact-us-about p{
+    letter-spacing: 0.2em;
+    font-size: 0.2em;
+}   
+.contact-us h1{
+    padding: 1em;
+}
+.contact-us-esquerda p{
+    font-size: 0.8em;
+    font-weight: normal;
+    line-height: 1em;
+}
+.contact-us-esquerda i{
+    border: none;
+}
+.contact-us-esquerda p:hover, .contact-us-esquerda i:hover{
+    color: black;
+}
+.contact-us-direita{
+    margin-top: 3.5em;
+}
+
+.logo-final-contact{
+    height: 35%;
+    width: 35%;
+}
+
+
+/* Frase About */
+.frase-about{
+    background-color: #d7c297;
+    margin-top: 2em;
+    padding: 5em;
+    text-align: center;
+    margin-bottom: -1.5em;
+    font-size: 0.85em;
+}
+
+.botao-about{
+    padding: 0.6em;
+    background-color: #d7c297;
+    border-color: #d7c297;
+    cursor: auto;
+}
+.botao-about:hover{
+    color: #222;
+    background-color: #d7c297;
+    border-color: #d7c297;
+}
+
+/*---  780px responsivo ---*/
+/* 780 / 16 = 48.75 */
+@media screen and (min-width: 48.75em){
+    
+    /* Geral */
+    .botao{
+        display: block;
+        margin: 5em auto 0 auto;
+        padding: 0.5em;
+    }
+    .botao-about{
+        display: block;
+        margin: 0 auto 2em auto;
+        border-radius: 5px;
+
+        background-color: #d7c297;
+        border: 3px solid #d7c297;
+        color: #222;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    /* Menu */
+
+    
+
+    /* Esconder Hamburguer */
+
+    #checkbox-menu, label{
+        display: none;
+    }
+    .cabecalho-menu{
+        display: block;
+        background: none;
+        float: right;
+        max-width: 80%;
+        width: 70%;
+        max-height: 50%;
+        
+        position: absolute;
+        top: -8em;
+        right: 2%; 
+    }
+    .cabecalho-menu{
+        text-align: right;
+    }
+
+    /*  */
+    .logo{
+        float: left;
+        margin: 2em 0 1em 2em;
+        height: 25%;
+        width: 25%;
+    }
+
+    .cabecalho-menu li{
+        display: inline-block;
+        transform: translate(0%, 150%);
+    }
+    .cabecalho-menu a{
+        font-size: 1.1em;
+    }
+
+    .cabecalho-menu a:hover{
+        color: #d7c297;
+        background-color: transparent;
+    }
+
+    .active a{
+        color: #d7c297;
+    }
+
+
+    /* Imagem Fundo */
+    .imagem-fundo figcaption{
+        color: white;
+        font-size: 1.4em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.788);
+    }
+
+    /* Container Our Services */
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5%;
+        grid-auto-rows: minmax(4em, auto);
+    }
+
+    .card1, .card3, .card5{
+        margin-left: 20%;
+    }
+    .card2, .card4, .card6{
+        margin-right: 20%;
+    }
+
+    /* Why Us */
+    .why-us{
+        padding: 0 0 5em 0;
+    }
+
+    .why-us-dentro{
+        height: 20em;
+    }
+
+    .grid-why-us{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5%;
+        grid-auto-rows: minmax(4em, auto);
+    }
+    .card-why-us1, .card-why-us3, .card-why-us5{
+        margin-left: 20%;
+    }
+    .card-why-us2, .card-why-us4, .card-why-us6{
+        margin-right: 20%;
+    }
+
+    /* Contact us */
+    .contact-us-esquerda{
+        width: 40%;
+        display: block;
+        float: left;
+        margin-left: 10%;
+        border-right: 1px solid #504d4e;
+    }
+
+    .contact-us-direita{
+        width: 40%;
+        display: block;
+        float: right;
+        margin-right: 9%;
+    }
+    .logo-final{
+        height: 50%;
+        width: 50%;
+        margin-top: -3.5em;
+    }
+
+
+
+
+    /* About */
+    .frase-about{
+        margin-top: 18em;
+    }
+
+    .logo-final-contact{
+        margin-top: 1.8em;
+        height: 50%;
+        width: 50%;
+    }
+}
